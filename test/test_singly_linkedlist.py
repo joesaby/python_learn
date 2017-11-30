@@ -3,7 +3,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
-from linkedlists.single_linkedlist import SingleLinkedList , Node
+from linkedlists.singly_linkedlist import SinglyLinkedList , Node
 
 DATA = ["abcd", "defg", "hijk", "lmno"]
 
@@ -11,7 +11,7 @@ class SingleLinkedListTests(unittest.TestCase):
 
     def test_add_to_head(self):
         ret_list = []
-        ll = SingleLinkedList()
+        ll = SinglyLinkedList()
         for el in DATA:
             ll.add_to_head(el)
             self.assertTrue(ll.get_head() == Node(el))
@@ -21,7 +21,7 @@ class SingleLinkedListTests(unittest.TestCase):
 
     def test_add_to_tail(self):
         ret_list = []
-        ll = SingleLinkedList()
+        ll = SinglyLinkedList()
         for el in DATA:
             ll.add(el)
             self.assertTrue(ll.get_tail() == Node(el))
@@ -30,7 +30,7 @@ class SingleLinkedListTests(unittest.TestCase):
         self.assertEquals(ret_list, DATA, "Expect return list to be the same as added list")
 
     def test_delete_tail(self):
-        ll = SingleLinkedList()
+        ll = SinglyLinkedList()
         # Only one node where Test tail & head are same
         ll.add("some")
         self.assertEquals(ll.get_head().get_data(), "some")
@@ -40,7 +40,7 @@ class SingleLinkedListTests(unittest.TestCase):
         self.assertEquals(ll.get_tail(), None)
 
     def test_delete_tail_list_contains_2_items(self):
-        ll = SingleLinkedList()
+        ll = SinglyLinkedList()
         for el in DATA[:2]:
             ll.add(el)
         ll.delete_tail()
@@ -48,7 +48,7 @@ class SingleLinkedListTests(unittest.TestCase):
         self.assertEquals(ll.get_tail().get_data(), DATA[0])
 
     def test_delete_tail_list_contains_more_than_2_items(self):
-        ll = SingleLinkedList()
+        ll = SinglyLinkedList()
         for el in DATA:
             ll.add(el)
 

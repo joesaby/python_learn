@@ -2,7 +2,7 @@ import logging
 log = logging.getLogger(__name__)
 
 
-class SingleLinkedList(object):
+class SinglyLinkedList(object):
     def __init__(self):
         self._head = None
         self._tail = None
@@ -82,18 +82,14 @@ class SingleLinkedList(object):
             second_last_node = node
             count +=1
 
-    def add_before(self, data, key):
-        for node in self:
-            pass
-
-    def add_after(self, data, key):
-        raise NotImplemented
-
+    #### For unit Testing ######
     def get_head(self):
         return self._head
 
     def get_tail(self):
         return self._tail
+
+    #### For unit Testing Ends ######
 
 class Node(object):
 
