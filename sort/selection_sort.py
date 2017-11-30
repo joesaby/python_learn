@@ -9,10 +9,6 @@ class SelectionSort(object):
             for inner_idx, inner_value in enumerate(sorted_list[outer_idx:]):
                 if inner_value < min_val :
                     min_val_idx = outer_idx + inner_idx
-                    print "Resetting Current_Val [{}] to new MinVal [{}] in iteration [{}] at idx [{}]".format(min_val,
-                                                                                                              inner_value,
-                                                                                                              outer_idx,
-                                                                                                              min_val_idx)
                     min_val = inner_value
             print "After iteration [{}], minval = [{}] at position [{}]".format(outer_idx, min_val, min_val_idx)
             sorted_list[min_val_idx] = outer_val
